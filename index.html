@@ -6,83 +6,135 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Beatgram</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
-      background-color: #ffffff;
-      color: #111;
-      text-align: center;
+      background: url('wood-bg.jpg') repeat-y center/cover;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      max-width: 900px;
+      width: 100%;
+      background-color: white;
+      margin: 40px;
+      padding: 40px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.2);
+      border-radius: 12px;
     }
     header {
-      padding: 60px 20px 20px;
+      text-align: center;
+      padding-bottom: 20px;
     }
     h1 {
       font-size: 3em;
-      margin-bottom: 10px;
+      margin: 0;
     }
     p {
       font-size: 1.2em;
-      color: #444;
+      color: #333;
     }
-    .tracks {
+    .genres {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin: 50px 0;
+    }
+    .genre-box {
+      background-color: #000;
+      color: #fff;
+      padding: 20px 40px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1.5em;
+      transition: transform 0.2s ease;
+    }
+    .genre-box:hover {
+      transform: scale(1.05);
+    }
+    .demo {
+      text-align: center;
       margin: 40px auto;
       max-width: 600px;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
-    .track {
-      border-top: 1px solid #ddd;
-      padding-top: 20px;
     }
     audio {
       width: 100%;
+      margin-top: 10px;
+    }
+    hr {
+      border: none;
+      border-top: 2px solid #ccc;
+      margin: 50px auto 20px;
+      width: 80%;
+    }
+    .footer-info {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 0.95em;
+      color: #333;
     }
     footer {
-      margin-top: 60px;
-      font-size: 0.9em;
-      color: #666;
+      text-align: center;
       padding: 20px;
-      border-top: 1px solid #eee;
-    }
-    .email {
-      color: #000;
-      text-decoration: none;
+      font-size: 0.8em;
+      color: #666;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Beatgram</h1>
-    <p>musica per i tuoi bisogni</p>
-  </header>
+  <div class="container">
+    <header>
+      <h1>Beatgram</h1>
+      <p>musica per i tuoi bisogni</p>
+    </header>
 
-  <section class="tracks">
-    <div class="track">
-      <h2>Hard</h2>
+    <section class="genres">
+      <a class="genre-box" href="hard.html">Hard</a>
+      <a class="genre-box" href="chill.html">Chill</a>
+      <a class="genre-box" href="trap.html">Trap</a>
+    </section>
+
+    <section class="demo">
+      <h2>Demo</h2>
+      <p>Ascolta un'anteprima delle nostre basi</p>
       <audio controls>
         <source src="hard.mp3" type="audio/mpeg" />
-        Il tuo browser non supporta l'audio.
       </audio>
-    </div>
-    <div class="track">
-      <h2>Chill</h2>
       <audio controls>
         <source src="chill.mp3" type="audio/mpeg" />
-        Il tuo browser non supporta l'audio.
       </audio>
-    </div>
-    <div class="track">
-      <h2>Trap</h2>
       <audio controls>
         <source src="trap.mp3" type="audio/mpeg" />
-        Il tuo browser non supporta l'audio.
       </audio>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    Contattami: <a class="email" href="mailto:beatgram.shop@gmail.com">beatgram.shop@gmail.com</a>
-  </footer>
+    <hr />
+    <div class="footer-info">
+      <p><strong>Licenza:</strong> Tutte le basi sono protette da copyright. L'uso è consentito solo con licenza.</p>
+      <p><strong>Contatti:</strong> beatgram.shop@gmail.com</p>
+    </div>
+
+    <footer>
+      &copy; 2025 Beatgram. Tutti i diritti riservati.
+    </footer>
+  </div>
+
+  <script>
+    const audios = document.querySelectorAll('audio');
+    audios.forEach(audio => {
+      audio.addEventListener('play', () => {
+        audios.forEach(other => {
+          if (other !== audio) {
+            other.pause();
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
