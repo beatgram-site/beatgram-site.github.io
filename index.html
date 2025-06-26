@@ -1,1 +1,88 @@
 
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beatgram</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #111;
+      text-align: center;
+    }
+    header {
+      padding: 60px 20px 20px;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2em;
+      color: #444;
+    }
+    .tracks {
+      margin: 40px auto;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    .track {
+      border-top: 1px solid #ddd;
+      padding-top: 20px;
+    }
+    audio {
+      width: 100%;
+    }
+    footer {
+      margin-top: 60px;
+      font-size: 0.9em;
+      color: #666;
+      padding: 20px;
+      border-top: 1px solid #eee;
+    }
+    .email {
+      color: #000;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Beatgram</h1>
+    <p>musica per i tuoi bisogni</p>
+  </header>
+
+  <section class="tracks">
+    <div class="track">
+      <h2>Hard</h2>
+      <audio controls>
+        <source src="hard.mp3" type="audio/mpeg" />
+        Il tuo browser non supporta l'audio.
+      </audio>
+    </div>
+    <div class="track">
+      <h2>Chill</h2>
+      <audio controls>
+        <source src="chill.mp3" type="audio/mpeg" />
+        Il tuo browser non supporta l'audio.
+      </audio>
+    </div>
+    <div class="track">
+      <h2>Trap</h2>
+      <audio controls>
+        <source src="trap.mp3" type="audio/mpeg" />
+        Il tuo browser non supporta l'audio.
+      </audio>
+    </div>
+  </section>
+
+  <footer>
+    Contattami: <a class="email" href="mailto:beatgram.shop@gmail.com">beatgram.shop@gmail.com</a>
+  </footer>
+</body>
+</html>
